@@ -123,22 +123,22 @@ class PostController {
 
 interface PostRepository extends ReactiveMongoRepository<Post, String> {
 
-    @Query(
-            value = """
-                    {
-                         "title" : {
-                             "$regularExpression" : { "pattern" : ?0, "options" : ""}
-                         }
-                    }
-                    """,
-            sort = """
-                    { 
-                        "title" : 1 , 
-                        "createdDate" : -1
-                    } 
-                    """
-    )
-    Flux<Post> findByKeyword(String q);
+//    @Query(
+//            value = """
+//                    {
+//                         "title" : {
+//                             "$regularExpression" : { "pattern" : ?0, "options" : ""}
+//                         }
+//                    }
+//                    """,
+//            sort = """
+//                    {
+//                        "title" : 1 ,
+//                        "createdDate" : -1
+//                    }
+//                    """
+//    )
+//    Flux<Post> findByKeyword(String q);
 
     Flux<PostSummary> findByTitleContains(String title);
 

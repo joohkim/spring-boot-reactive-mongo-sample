@@ -68,15 +68,15 @@ public class PostRepositoryPageableTest {
                 .verifyComplete();
     }
 
-    @Test
-    public void testFindByKeyword() {
-        this.postRepository.findByKeyword(".*title.*")
-                .skip(0)
-                .take(10)
-                .log()
-                .as(StepVerifier::create)
-                .expectNextCount(10)
-                .verifyComplete();
-    }
+//    @Test
+//    public void testFindByKeyword() {
+//        this.postRepository.findByKeyword(".*title.*")
+//                .skip(0)
+//                .take(10)
+//                .log()
+//                .as(StepVerifier::create)
+//                .expectNextCount(10)
+//                .verifyComplete();
+//    }
 
 }
